@@ -30,7 +30,7 @@ def path_set(path):
              for _ in range(distance):
                  current_x += 1
                  cable_path.add((current_x, current_y))
-        if direction == "L":
+        elif direction == "L":
              for _ in range(distance):
                  current_x -= 1
                  cable_path.add((current_x, current_y))
