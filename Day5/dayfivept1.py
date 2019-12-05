@@ -97,11 +97,7 @@ def opcode_4(position, param1, list):
   
 if __name__ == "__main__":  
 
-    #Starting input_value - "1" for A/C System
-    input_value = 1
-
-    # Main Function
-    def main_loop(main_list):
+    def main_loop(input_value, main_list):
         # Starting Position
         current_position = 0
         
@@ -111,19 +107,19 @@ if __name__ == "__main__":
             deciphered_code = opcode_decode(main_list[current_position])
             if (deciphered_code[0] == 1):
                 main_list = opcode_1(current_position, deciphered_code[1],
-deciphered_code[2], deciphered_code[3], main_list)
-                current_position +=4
+                deciphered_code[2], deciphered_code[3], main_list)
+                current_position += 4
             elif (deciphered_code[0] == 2):
                 main_list = opcode_2(current_position, deciphered_code[1],
-deciphered_code[2], deciphered_code[3], main_list)
+                deciphered_code[2], deciphered_code[3], main_list)
                 current_position += 4
             elif (deciphered_code[0] == 3):
-                main_list = opcode_3(input_value, current_position+1,
-main_list)
+                main_list = opcode_3(input_value, current_position + 1,
+                main_list)
                 current_position += 2
             elif (deciphered_code[0] == 4):
-                opcode_4(current_position+1, deciphered_code[1], main_list)
+                opcode_4(current_position + 1, deciphered_code[1], main_list)
                 current_position += 2
     
     # Run main loop
-    main_loop(main_list)
+    main_loop(1, main_list)

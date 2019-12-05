@@ -181,40 +181,40 @@ if __name__ == "__main__":
             deciphered_code = opcode_decode(main_list[current_position])
             if (deciphered_code[0] == 1):
                 main_list = opcode_1(current_position, deciphered_code[1],
-deciphered_code[2], deciphered_code[3], main_list[:])
-                current_position +=4
+                deciphered_code[2], deciphered_code[3], main_list[:])
+                current_position += 4
             elif (deciphered_code[0] == 2):
                 main_list = opcode_2(current_position, deciphered_code[1],
-deciphered_code[2], deciphered_code[3], main_list[:])
+                deciphered_code[2], deciphered_code[3], main_list[:])
                 current_position += 4
             elif (deciphered_code[0] == 3):
                 main_list = opcode_3(input_value, current_position,
-main_list[:])
+                main_list[:])
                 current_position += 2
             elif (deciphered_code[0] == 4):
                 opcode_4(current_position, deciphered_code[1], main_list[:])
                 current_position += 2
             elif (deciphered_code[0] == 5):
                 instruction_value = opcode_5(current_position, deciphered_code[1],
-deciphered_code[2], main_list[:])
+                deciphered_code[2], main_list[:])
                 if instruction_value > -1:
                     current_position = instruction_value
                 else:
                     current_position += 3
             elif (deciphered_code[0] == 6):
                 instruction_value = opcode_6(current_position, deciphered_code[1],
-deciphered_code[2], main_list[:])
+                deciphered_code[2], main_list[:])
                 if instruction_value > -1:
                     current_position = instruction_value
                 else:
                     current_position += 3
             elif (deciphered_code[0] == 7):
                 main_list = opcode_7(current_position, deciphered_code[1],
-deciphered_code[2], main_list[:])
+                deciphered_code[2], main_list[:])
                 current_position += 4 
             elif (deciphered_code[0] == 8):
                 main_list = opcode_8(current_position, deciphered_code[1],
-deciphered_code[2], main_list[:])
+                deciphered_code[2], main_list[:])
                 current_position += 4 
     
     # Testing Only
