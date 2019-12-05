@@ -28,6 +28,7 @@ def opcode_decode(opcode_undecoded):
     opcode_list.extend(reversed([int(x) for x in str(opcode_undecoded)]))
     while(len(opcode_list) < 4):
        opcode_list.append(0)
+    
     #Returns opcode_list
     return opcode_list
 
